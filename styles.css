@@ -137,7 +137,6 @@ h3 {
   }
 }
 
-
 /* =========================================================
    Print Layout
    ========================================================= */
@@ -157,7 +156,12 @@ h3 {
     }
   }
 
-  /* Remove screen layout constraints */
+  /* Hide the screen-only title panel */
+  .hero {
+    display: none !important;
+  }
+
+  /* Reset screen layout values for print */
   html,
   body {
     margin: 0;
@@ -168,6 +172,8 @@ h3 {
 
   body {
     color: #000;
+    font-size: 10.5pt;
+    line-height: 1.42;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -176,31 +182,79 @@ h3 {
   .section {
     width: auto;
     max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Place the preamble on the first printed page */
+  .preamble {
+    min-height: 225mm;
+    display: grid;
+    align-content: center;
+    text-align: center;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .preamble .label {
+    margin-bottom: 5mm;
+  }
+
+  .lead {
+    font-size: 18pt;
+    line-height: 1.42;
   }
 
   /* Start every chapter on a new page */
   .chapter {
+    border-top: 0;
     break-before: page;
     page-break-before: always;
   }
 
-  /* Keep chapter heading together */
+  /* Compact chapter spacing so each current chapter fits one page */
   .chapter__header {
+    margin: 0 0 12mm;
+    text-align: center;
     break-after: avoid;
     page-break-after: avoid;
-    margin-bottom: 3.5rem;
   }
 
-  /* Prevent awkward page breaks */
+  .chapter__header .label {
+    margin-bottom: 3mm;
+  }
+
+  h2 {
+    font-size: 30pt;
+    line-height: 1;
+  }
+
   .article {
+    margin: 0 0 10mm;
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  h2,
+  .article:last-child {
+    margin-bottom: 0;
+  }
+
+  .article .label {
+    margin-bottom: 2.5mm;
+  }
+
   h3 {
+    margin: 0 0 3.5mm;
+    font-size: 18pt;
+    line-height: 1.08;
     break-after: avoid;
     page-break-after: avoid;
+  }
+
+  .article p:not(.label) {
+    margin: 1.5mm 0;
+    font-size: 10.5pt;
+    line-height: 1.42;
   }
 
   p {
@@ -208,13 +262,19 @@ h3 {
     widows: 3;
   }
 
-  /* Keep the signature with the final chapter */
+  /* Keep the signature on the same page as Chapter V */
   .signature {
+    border-top: 1px solid var(--line);
+    margin: 16mm 0 0;
+    padding: 7mm 0 0;
     break-before: avoid;
     page-break-before: avoid;
     break-inside: avoid;
     page-break-inside: avoid;
-    margin-top: 4rem;
+  }
+
+  .signature p {
+    font-size: 10pt;
   }
 
   /* Do not print link URLs */
