@@ -137,13 +137,13 @@ h3 {
   }
 }
 
-
 /* =========================================================
    Print Layout
    ========================================================= */
 
 @media print {
 
+  /* Configure the printed page and the centered page number */
   @page {
     size: A4 portrait;
     margin: 32mm 32mm 24mm 32mm;
@@ -156,75 +156,101 @@ h3 {
     }
   }
 
-  html, body {
+  /* Remove screen-only canvas styling */
+  html,
+  body {
+    width: auto;
     margin: 0;
     padding: 0;
     background: #fff;
     color: #000;
-    width: auto;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
-  .hero{
-    min-height:auto;
-    padding:0 0 2rem;
-    border-bottom:1px solid var(--line);
+  /* Center the title and motto within the upper part of page one */
+  .hero {
+    min-height: 105mm;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    border-bottom: 1px solid var(--line);
   }
 
-  .section{
-    width:auto;
-    max-width:none;
-    padding:2rem 0;
+  .hero__inner {
+    width: 100%;
   }
 
-  .preamble{
-    break-after:page;
-    page-break-after:always;
-    padding-top:0;
+  /* Add breathing room between the dividing line and the preamble */
+  .preamble {
+    width: auto;
+    max-width: none;
+    padding: 14mm 0 0;
+    break-after: page;
+    page-break-after: always;
   }
 
-  .chapter{
-    break-before:page;
-    page-break-before:always;
+  /* Remove screen section spacing from printed chapters */
+  .section {
+    width: auto;
+    max-width: none;
   }
 
-  .chapter__header{
-    margin-bottom:2rem;
-    break-after:avoid;
-    page-break-after:avoid;
+  /* Start each chapter on a new page without extra chapter-specific top space */
+  .chapter {
+    padding: 0;
+    border-top: 0;
+    break-before: page;
+    page-break-before: always;
   }
 
-  .article{
-    margin-bottom:2rem;
-    break-inside:avoid;
-    page-break-inside:avoid;
+  /* Keep each chapter compact enough to fit on one page */
+  .chapter__header {
+    margin-bottom: 2rem;
+    break-after: avoid;
+    page-break-after: avoid;
   }
 
-  h2,h3{
-    break-after:avoid;
-    page-break-after:avoid;
+  .article {
+    margin-bottom: 2rem;
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
-  .article p:not(.label){
-    font-size:11pt;
-    line-height:1.45;
+  .article:last-child {
+    margin-bottom: 0;
   }
 
-  .signature{
-    margin-top:2rem;
-    break-before:avoid;
-    page-break-before:avoid;
-    break-inside:avoid;
-    page-break-inside:avoid;
+  h2,
+  h3 {
+    break-after: avoid;
+    page-break-after: avoid;
   }
 
-  p{
-    orphans:3;
-    widows:3;
+  .article p:not(.label) {
+    font-size: 11pt;
+    line-height: 1.45;
   }
 
-  a::after{
-    content:none !important;
+  /* Keep the signature with Chapter V */
+  .signature {
+    width: auto;
+    max-width: none;
+    margin-top: 2rem;
+    padding: 2rem 0 0;
+    break-before: avoid;
+    page-break-before: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Do not append link destinations to printed text */
+  a::after {
+    content: none !important;
   }
 }
