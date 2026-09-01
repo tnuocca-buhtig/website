@@ -54,6 +54,11 @@ h1 {
   text-align: center;
 }
 
+.afterword {
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+
 .label {
   margin: 0 0 1rem;
   color: var(--muted);
@@ -107,7 +112,7 @@ h3 {
 }
 
 .signature {
-  border-top: 1px solid var(--line);
+  border-top: 0;
 }
 
 .signature p {
@@ -243,6 +248,25 @@ h3 {
     line-height: 1.5;
   }
 
+.afterword {
+  padding: 7mm 0;
+  text-align: center;
+  border-top: 1px solid #999;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.afterword .label {
+  margin-bottom: 5mm;
+}
+
+.afterword .lead {
+  max-width: 34em;
+  margin: 0 auto;
+  font-size: 13pt;
+  line-height: 1.5;
+}
+  
   /* Start each chapter on a new page. */
   .chapter {
     padding: 0;
@@ -297,6 +321,7 @@ h3 {
     max-width: none;
     margin-top: 7mm;
     padding: 6mm 0 0;
+    border-top: 0;
     break-before: avoid;
     page-break-before: avoid;
     break-inside: avoid;
