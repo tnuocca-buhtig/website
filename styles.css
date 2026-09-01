@@ -173,10 +173,7 @@ h3 {
   }
 
   /* Give the first page a calmer vertical position without fixed page heights. */
-  @page :first {
-    margin-top: 42mm;
-  }
-
+ 
   html,
   body {
     width: auto;
