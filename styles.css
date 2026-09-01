@@ -149,6 +149,16 @@ h3 {
 
 @media print {
 
+  /* Set Title and Preamble at the center : added in the last format editing. */
+.first-page {
+  min-height: calc(100vh - 56mm);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  break-after: page;
+  page-break-after: always;
+}  
+  
   /* Follow the paper size selected by the printer or browser. */
   @page {
     size: auto;
@@ -199,18 +209,15 @@ h3 {
 
   /* Center the title block with flexbox and keep the adjustment relative. */
   .hero {
-    min-height: 9em;
+    min-height: 0;
     padding: 0 0 10mm;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid var(--line);
+    display: block;
+    border-bottom: 1px solid #999;
   }
 
   .hero__inner {
     width: 100%;
     text-align: center;
-    transform: translateY(1.3em);
   }
 
   h1 {
@@ -233,8 +240,6 @@ h3 {
   .preamble {
     padding: 11mm 0 0;
     text-align: center;
-    break-after: page;
-    page-break-after: always;
   }
 
   .preamble .label {
