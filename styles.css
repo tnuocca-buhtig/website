@@ -4,6 +4,7 @@
   --muted: #6c685f;
   --line: rgba(18,18,18,.17);
   --content: 760px;
+  --body-text-size: clamp(1.25rem, 2.4vw, 1.5rem);
 }
 
 * { box-sizing: border-box; }
@@ -33,14 +34,15 @@ body {
 h1 {
   margin: 0;
   font-weight: 400;
-  font-size: clamp(3.1rem, 6.7vw, 5.6rem);
+  font-size: clamp(5.25rem, 10vw, 6.25rem);
   line-height: 1;
   letter-spacing: normal;
 }
 
 .motto {
-  margin: clamp(1.25rem, 2vw, 1.75rem) 0 0;
-  font-size: clamp(.69rem, 1.47vw, 1.225rem);
+  margin: .75rem 0 0;
+  font-size: var(--body-text-size);
+  line-height: 1.1;
   font-style: italic;
   white-space: nowrap;
 }
@@ -109,7 +111,7 @@ h3 {
 
 .article p:not(.label) {
   margin: .55rem 0;
-  font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+  font-size: var(--body-text-size);
 }
 
 .signature {
