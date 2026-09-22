@@ -169,7 +169,7 @@ h3 {
 
 @media print {
 
-  /* Set Title and Preamble at the center : added in the last format editing. */
+ /* Center the title and preamble on the first printed page. */
 .first-page {
   min-height: calc(100vh - 56mm);
   display: flex;
@@ -191,8 +191,6 @@ h3 {
       color: #555;
     }
   }
-
-  /* Give the first page a calmer vertical position without fixed page heights. */
  
   html,
   body {
