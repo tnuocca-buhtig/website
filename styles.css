@@ -75,7 +75,7 @@ h1 {
 
 .lead {
   margin: 0;
-  font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+  font-size: var(--body-text-size);
   line-height: 1.46;
 }
 
