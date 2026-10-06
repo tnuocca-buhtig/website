@@ -41,7 +41,7 @@ h1 {
 }
 
 .document-title {
-  margin: 4rem 0 0;
+  margin: 5rem 0 0;
   font-size: var(--body-text-size);
   font-style: normal;
   font-weight: 400;
@@ -158,7 +158,7 @@ h3 {
 @media print {
 
 .document-title {
-  margin: 12mm 0 0;
+  margin: 18mm 0 0;
   font-size: 13pt;
   font-style: normal;
   font-weight: 400;
