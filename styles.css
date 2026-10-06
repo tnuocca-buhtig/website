@@ -61,6 +61,7 @@ h1 {
 .afterword {
   text-align: center;
   border-top: 1px solid var(--line);
+  padding-bottom: 0;
 }
 
 .label {
@@ -118,6 +119,7 @@ h3 {
 .signature {
   border-top: 0;
   padding-top: 0;
+  margin-top: 4rem;
 }
 
 .signature p {
@@ -263,7 +265,7 @@ h3 {
 
 .afterword {
   margin-top: 10mm;
-  padding: 11mm 0 14mm;
+  padding: 11mm 0 0;
   text-align: center;
   border-top: 1px solid #999;
   break-inside: avoid;
@@ -333,7 +335,7 @@ h3 {
   .signature {
     width: auto;
     max-width: none;
-    margin-top: 0;
+    margin-top: 12mm;
     padding: 0;
     border-top: 0;
     break-before: avoid;
